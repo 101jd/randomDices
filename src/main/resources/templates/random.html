@@ -19,7 +19,12 @@
         <p th:case="*" th:classappend="default" th:text="${r}">rnd</p>
         </div>
     </div>
-    <p class="txt">Roll: <span class="txt" th:text="${sum}" th:classappend="${sum == 20} ? 'crit' : ''">sum</span></p>
+    <div class="txt" th:switch="${sum}">
+        <p class="txt">Roll:
+         <span class="txt" th:case="1" th:classappend="fall" th:text="${sum}">sum</span>
+        <span class="txt" th:case="20" th:classappend="crit" th:text="${sum}">sum</span>
+        <span class="txt" th:case="*" th:classappend="default" th:text="${sum}">sum</span></p>
+    </div>
 </div>
 </div>
 </body>
