@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Randomizer</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+<div class="rnd">
+    <div class="img-cont">
+    <img class="d20" src="img/d20.avif">
+    </div>
+    <div class="list">
+<!--        <p class="txt" th:each="r : ${rnd}" th:classappend="${r == 1} ? 'fall' : ''" th:text="${r}">rnd</p>-->
+        <div class="txt" th:each="r : ${rnd}" th:switch="${r}">
+        <p th:case="1" th:classappend="fall" th:text="${r}">rnd</p>
+        <p th:case="20" th:classappend="crit" th:text="${r}">rnd</p>
+        <p th:case="*" th:classappend="default" th:text="${r}">rnd</p>
+        </div>
+    </div>
+    <p class="txt">Sum: <span class="txt" th:text="${sum}" th:classappend="${sum == 20} ? 'crit' : ''">sum</span></p>
+</div>
+</div>
+</body>
+</html>

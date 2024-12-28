@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.rnd {
+
+    }
+.txt {
+        font-family: arial;
+        font-weight: bold;
+        font-size: 180px;
+    }
+
+.container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+.d20{
+        width: 64px;
+        height: 64px;
+}
+
+.img-cont{
+display:flex;
+align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.crit{
+    color: green;
+}
+
+.fall{
+    color: red;
+}
+.list {
+
+        display: flex;
+        gap: 64px;
+        flex-direction: row;
+}
