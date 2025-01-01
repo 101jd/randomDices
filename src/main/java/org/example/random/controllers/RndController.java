@@ -1,21 +1,12 @@
 package org.example.random.controllers;
 
-import org.example.random.model.cubes.*;
 import org.example.random.service.CubeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.support.NullValue;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import javax.lang.model.type.NullType;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
 
 @Controller
 public class RndController {
@@ -39,8 +30,8 @@ public class RndController {
         d20 = (d20 == null) ? 0 : d20;
         service.getCubeList().clear();
         service.addCube(d4, d6, d8, d10, d12, d20);
-        model.addAttribute("rnd", service.getCubeList().getCubes());
-        model.addAttribute("sum", service.getCubeList().getCubes().stream().mapToInt(i -> i).sum());
+        model.addAttribute("rnd", service.getCubeList().getCubesRolls());
+        model.addAttribute("sum", service.getCubeList().getCubesRolls().stream().mapToInt(i -> i).sum());
         return "random";
     }
 }

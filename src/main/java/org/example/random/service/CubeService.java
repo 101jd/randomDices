@@ -19,22 +19,22 @@ public class CubeService {
 
     public void addCube(int d4, int d6, int d8, int d10, int d12, int d20){
         for (int i = 0; i < d4; i++) {
-            cubeList.add(new Random().nextInt(1, new D4().getSides()+1));
+            cubeList.add(new D4());
         }
         for (int i = 0; i < d6; i++) {
-            cubeList.add(new Random().nextInt(1, new D6().getSides()+1));
+            cubeList.add(new D6());
         }
         for (int i = 0; i < d8; i++) {
-            cubeList.add(new Random().nextInt(1, new D8().getSides()+1));
+            cubeList.add(new D8());
         }
         for (int i = 0; i < d10; i++) {
-            cubeList.add(new Random().nextInt(1, new D10().getSides()+1));
+            cubeList.add(new D10());
         }
         for (int i = 0; i < d12; i++) {
-            cubeList.add(new Random().nextInt(1, new D12().getSides()+1));
+            cubeList.add(new D12());
         }
         for (int i = 0; i < d20; i++) {
-            cubeList.add(new Random().nextInt(1, new D20().getSides() + 1));
+            cubeList.add(new D20());
         }
     }
 
