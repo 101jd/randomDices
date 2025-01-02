@@ -1,6 +1,6 @@
 package org.example.random.service;
 
-import org.example.random.model.cubes.*;
+import org.example.random.model.dices.*;
 import org.example.random.repo.DiceList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package org.example.random.repo;
 
-import org.example.random.model.cubes.Dice;
+import org.example.random.model.dices.Dice;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
