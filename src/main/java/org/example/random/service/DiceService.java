@@ -23,7 +23,7 @@ public class DiceService {
      * @param d20
      * Adds all dices to repo
      */
-    public void addCube(int d4, int d6, int d8, int d10, int d12, int d20){
+    public void addDice(int d4, int d6, int d8, int d10, int d12, int d20){
         for (int i = 0; i < d4; i++) {
             diceList.add(Dice.D4);
         }

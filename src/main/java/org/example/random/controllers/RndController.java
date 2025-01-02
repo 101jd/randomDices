@@ -43,7 +43,7 @@ public class RndController {
         d12 = (d12 == null) ? 0 : d12;
         d20 = (d20 == null) ? 0 : d20;
         service.getDiceList().clear();
-        service.addCube(d4, d6, d8, d10, d12, d20);
+        service.addDice(d4, d6, d8, d10, d12, d20);
         model.addAttribute("rnd", service.getDiceList().getDicesRolls());
         model.addAttribute("sum", service.getDiceList().getSum());
         return "random";
