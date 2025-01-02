@@ -1,8 +1,11 @@
 package org.example.random.model.cubes;
 
-public abstract class Cube {
+public enum Dice {
+    D4(4), D6(6), D8(8), D10(10),
+    D12(12), D20(20);
+
     private final int sides;
-    public Cube(int sides){
+    Dice(int sides){
         this.sides = sides;
     }
 
