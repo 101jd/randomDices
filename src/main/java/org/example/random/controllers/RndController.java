@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class RndController {
     @Autowired
@@ -44,8 +46,9 @@ public class RndController {
         d20 = (d20 == null) ? 0 : d20;
         service.getDiceList().clear();
         service.addCube(d4, d6, d8, d10, d12, d20);
-        model.addAttribute("rnd", service.getDiceList().getCubesRolls());
-        model.addAttribute("sum", service.getDiceList().getCubesRolls().stream().mapToInt(i -> i).sum());
+        List<Integer> rolls = service.getDiceList().getCubesRolls();
+        model.addAttribute("rnd", rolls);
+        model.addAttribute("sum", rolls.stream().mapToInt(i -> i).sum());
         return "random";
     }
 }
